@@ -1,0 +1,14 @@
+Script started on 2025-06-06 20:51:01-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="170" LINES="41"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+[?2004h]0;gustavo@GBaezaA-PC: ~[01;32mgustavo@GBaezaA-PC[00m:[01;34m~[00m$ [7mdocker container run -it ubuntu bash[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker container run -it ubuntu bash
+[?2004l[?2004h]0;root@a4a28f67ff64: /root@a4a28f67ff64:/# mkdir /yse   usr/src/app
+[?2004l[?2004h]0;root@a4a28f67ff64: /root@a4a28f67ff64:/# mkdir /usr/src/app[1P[1P[1P[1P[1P[1@c[1@d
+[?2004l[?2004h]0;root@a4a28f67ff64: /usr/src/approot@a4a28f67ff64:/usr/src/app# touch indess  x.js
+[?2004l[?2004h]0;root@a4a28f67ff64: /usr/src/approot@a4a28f67ff64:/usr/src/app# exit
+[?2004lexit
+[?2004h]0;gustavo@GBaezaA-PC: ~[01;32mgustavo@GBaezaA-PC[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2025-06-06 20:54:35-04:00 [COMMAND_EXIT_CODE="0"]
