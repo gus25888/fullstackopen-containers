@@ -1,0 +1,77 @@
+Script started on 2025-06-16 21:12:41-04:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="156" LINES="38"]
+[?2004h]0;gustavo@GBaezaA-PC: ~/fullstackopen-containers/todo-app/todo-backend[01;32mgustavo@GBaezaA-PC[00m:[01;34m~/fullstackopen-containers/todo-app/todo-backend[00m$ [7mdocker compose -f docker-compose.dev.yml up -d[27mdocker compose -f docker-compose.dev.yml up -d
+[?2004l[1A[1B[0G[?25l[+] Running 0/1
+ [33m⠋[0m Network todo-backend_default  Creating                                                                                                              [34m0.1s [0m
+[?25h[1A[1A[0G[?25l[+] Running 0/1
+ [33m⠙[0m Network todo-backend_default  Creating                                                                                                              [34m0.2s [0m
+[?25h[1A[1A[0G[?25l[34m[+] Running 1/2[0m
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [33m⠋[0m Container todo-backend-mongo-1  Creating                                                                                                            [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [32m✔[0m Container todo-backend-mongo-1  [32mCreated[0m                                                                                                             [34m0.2s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [33m⠙[0m Container todo-backend-mongo-1  Starting                                                                                                            [34m0.3s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [33m⠹[0m Container todo-backend-mongo-1  Starting                                                                                                            [34m0.4s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [33m⠸[0m Container todo-backend-mongo-1  Starting                                                                                                            [34m0.5s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [33m⠼[0m Container todo-backend-mongo-1  Starting                                                                                                            [34m0.6s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [33m⠴[0m Container todo-backend-mongo-1  Starting                                                                                                            [34m0.7s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [33m⠦[0m Container todo-backend-mongo-1  Starting                                                                                                            [34m0.8s [0m
+[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+ [32m✔[0m Network todo-backend_default    [32mCreated[0m                                                                                                             [34m0.2s [0m
+ [32m✔[0m Container todo-backend-mongo-1  [32mStarted[0m                                                                                                             [34m0.8s [0m
+[?25h[?2004h]0;gustavo@GBaezaA-PC: ~/fullstackopen-containers/todo-app/todo-backend[01;32mgustavo@GBaezaA-PC[00m:[01;34m~/fullstackopen-containers/todo-app/todo-backend[00m$ [7mdocker exec -it todo-backend-mongo-1 bash[27mdocker exec -it todo-backend-mongo-1 bash
+[?2004l[?2004hroot@815ca87dd3b7:/# [7mmongosh "mongodb://127.0.0.1:27017/the_database" --username the_username --apiVersion 1[27mroot@815ca87dd3b7:/# mongosh "mongodb://127.0.0.1:27017/the_database" --username the_username --apiVersion 1
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/the_database?directConnection=true&serverSelectionTimeoutMS=2000Enter password: ************
+Current Mongosh Log ID:	6850c128b664f493a069e327
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/the_database?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.2[0m
+Using MongoDB:		8.0.10 (API Version 1)
+[1m[33mUsing Mongosh[0m:		2.5.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+[1G[0J [1G[?2004h[1G[0Jthe_database> [15Gdb.todos.insertOne( { text[33mtext[39m: [32m'[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m [32mb[39m[32me[39m[32ml[39m[32mt[39m[32m'[39m, d[36mdo[39mdone: fals[33mfalse[39m } );
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'6850c131b664f493a069e328'[39m)
+}
+[1G[0Jthe_database> [15Gdb.todod[1G[0Jthe_database> db.todo[22Gs.find({});
+[
+  {
+    _id: ObjectId([32m'6850c1188de48e0a9669e328'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6850c1188de48e0a9669e329'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6850c131b664f493a069e328'[39m),
+    text: [32m'Increase the number of tools in my tool belt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004l[?2004hroot@815ca87dd3b7:/# exit    exit
+[?2004lexit
+[?2004h]0;gustavo@GBaezaA-PC: ~/fullstackopen-containers/todo-app/todo-backend[01;32mgustavo@GBaezaA-PC[00m:[01;34m~/fullstackopen-containers/todo-app/todo-backend[00m$ exit
+[?2004lexit
+
+Script done on 2025-06-16 21:13:53-04:00 [COMMAND_EXIT_CODE="0"]
