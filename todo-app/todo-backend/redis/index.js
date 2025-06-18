@@ -1,9 +1,11 @@
 const redis = require('redis')
 const { promisify } = require('util')
 const { REDIS_URL } = require('../util/config')
+const { Todo } = require('../mongo');
 
 let getAsync
 let setAsync
+let setAddedTodos
 
 if (!REDIS_URL) {
   const redisIsDisabled = () => {
@@ -12,16 +14,24 @@ if (!REDIS_URL) {
   }
   getAsync = redisIsDisabled
   setAsync = redisIsDisabled
+  setAddedTodos = redisIsDisabled
 } else {
   const client = redis.createClient({
     url: REDIS_URL
   })
-    
+
   getAsync = promisify(client.get).bind(client)
-  setAsync = promisify(client.set).bind(client)    
+  setAsync = promisify(client.set).bind(client)
+
+  setAddedTodos = async () => {
+    let addedTodos = await Todo.countDocuments()
+    await setAsync("added_todos", addedTodos)
+  }
+  setAddedTodos()
 }
 
 module.exports = {
   getAsync,
-  setAsync
+  setAsync,
+  setAddedTodos
 }

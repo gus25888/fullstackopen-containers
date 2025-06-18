@@ -7,3 +7,7 @@ services:
             MONGO_INITDB_ROOT_USERNAME: root
             MONGO_INITDB_ROOT_PASSWORD: a2tBtcX5JSimbw7
             MONGO_INITDB_DATABASE: the_database
+    redis:
+        image: redis:8-bookworm
+        ports:
+            - 6379:6379
