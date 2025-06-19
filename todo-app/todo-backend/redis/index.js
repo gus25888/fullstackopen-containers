@@ -27,7 +27,6 @@ if (!REDIS_URL) {
     let addedTodos = await Todo.countDocuments()
     await setAsync("added_todos", addedTodos)
   }
-  setAddedTodos()
 }
 
 module.exports = {
