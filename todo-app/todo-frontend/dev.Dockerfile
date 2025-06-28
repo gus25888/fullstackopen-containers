@@ -2,10 +2,14 @@ FROM node:22-bullseye-slim
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY --chown=node:node . .
 
 ENV VITE_BACKEND_URL=http://localhost:3000
 
-RUN npm install
+ENV NODE_ENV=development
+
+RUN npm ci --include=dev
+
+USER node
 
 CMD ["npm", "run", "dev", "--", "--host"]
