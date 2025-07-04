@@ -7,10 +7,12 @@ const Todo = ({ todo, deleteTodo, completeTodo }) => {
     completeTodo(todo)
   }
 
-  return (<div className="todoContainer">
+  const key = (Math.random() * 10000).toString().replace('.', '')
+
+  return (<div className="todoContainer" key={key}>
     <span>{todo.text}</span>
     <span>
-      This todo is {todo.done ? 'done' : 'NOT done'}
+      This TODO is {todo.done ? 'done' : 'NOT done'}
     </span>
     <span>
       <button onClick={onClickDelete(todo)}> Delete </button>

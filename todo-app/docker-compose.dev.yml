@@ -1,0 +1,53 @@
+services:
+    server:
+        image: todo-backend-dev
+        volumes:
+            - ./todo-backend:/usr/src/app
+            - dev_node_modules_be:/usr/src/app/node_modules
+        environment:
+            - REDIS_URL=redis://redis:6379
+            - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+        depends_on:
+            mongo:
+                condition: service_started
+                restart: true
+            redis:
+                condition: service_started
+    mongo:
+        image: initialized-mongo
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: a2tBtcX5JSimbw7
+            MONGO_INITDB_DATABASE: the_database
+        volumes:
+            - mongo_data_dev:/data_db
+    redis:
+        image: redis:8-bookworm
+        command: ["redis-server", "--appendonly", "yes"]
+        volumes:
+            - redis_data_dev:/data
+    app:
+        image: todo-front-dev
+        build:
+            context: ./todo-frontend
+            dockerfile: ./todo-frontend/dev.Dockerfile
+        volumes:
+            - ./todo-frontend:/usr/src/app
+            - dev_node_modules_fe:/usr/src/app/node_modules
+        container_name: todo-front-dev
+        depends_on:
+            - server
+    nginx:
+        image: nginx:1.20.1
+        volumes:
+            - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+        ports:
+            - 8080:80
+        container_name: reverse-proxy
+        depends_on:
+            - app
+volumes:
+    dev_node_modules_fe:
+    dev_node_modules_be:
+    redis_data_dev:
+    mongo_data_dev:
