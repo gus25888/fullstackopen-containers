@@ -20,4 +20,4 @@ The directory `todo-app` contains the app used for the exercises:
 
 Inside the `todo-app` directory, there are two directories for the frontend and the backend. Each has its own readme. Also, it contains the files needed to generate the production build of the app. Consider the creation of an `.env` file to define the variables required in `docker-compose.yml`.
 
-Lastly, the exercises 12.21 and 12.22 can be reviewed [here](https://github.com/gus25888/phonebook-containers)
+Lastly, the exercises 12.21 and 12.22 can be reviewed in the `phonebook-app` directory or in the [repository](https://github.com/gus25888/phonebook-containers)
